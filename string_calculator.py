@@ -7,4 +7,6 @@ class StringCalculator():
             [number1, number2] = [ int(number) for number in numbersArray]
         if numbersArray.__len__() == 1:
             [number1] = numbersArray
+            if number1 == '':
+                number1 = 0
         return number1 + number2
