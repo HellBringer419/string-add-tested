@@ -8,4 +8,6 @@ class StringCalculator():
         number2 = 0
         if numbersArray.__len__() == 2:
             [number1, number2] = numbersArray
+        if numbersArray.__len__() == 1:
+            [number1] = numbersArray
         return number1 + number2
