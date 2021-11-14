@@ -2,16 +2,18 @@ import unittest
 from random import randint
 from string_calculator import StringCalculator
 
+
 class FirstTest(unittest.TestCase):
 
     def test_add(self):
         self.assertEqual(StringCalculator.add("1,2"), 3)
-    
+
     def test_add_1(self):
         self.assertEqual(StringCalculator.add("1"), 1)
-    
+
     def test_add_0(self):
         self.assertEqual(StringCalculator.add(""), 0)
+
 
 class SecondTest(unittest.TestCase):
 
@@ -26,11 +28,13 @@ class SecondTest(unittest.TestCase):
                 argument_string += str(i)
             else:
                 argument_string += str(i) + ","
-        
-        ## sum of (n-1) natural numbers: n * (n-1) / 2
+
+        # sum of (n-1) natural numbers: n * (n-1) / 2
         expected_result = int(random_number * (random_number - 1) / 2)
 
-        self.assertEqual(StringCalculator.add(argument_string), expected_result)
+        self.assertEqual(StringCalculator.add(
+            argument_string), expected_result)
+
 
 if __name__ == '__main__':
     unittest.main()
