@@ -35,6 +35,10 @@ class SecondTest(unittest.TestCase):
         self.assertEqual(StringCalculator.add(
             argument_string), expected_result)
 
+class ThirdTest(unittest.TestCase):
+    
+    def test_add_with_new_line_as_param(self):
+        self.assertEqual(StringCalculator.add("1\n2,3"), 6)
 
 if __name__ == '__main__':
     unittest.main()
