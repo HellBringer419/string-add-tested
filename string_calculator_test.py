@@ -3,7 +3,7 @@ from random import randint
 from string_calculator import StringCalculator
 
 
-class FirstTest(unittest.TestCase):
+class TestAddMethod(unittest.TestCase):
 
     def test_add(self):
         self.assertEqual(StringCalculator.add("1,2"), 3)
@@ -13,9 +13,6 @@ class FirstTest(unittest.TestCase):
 
     def test_add_0(self):
         self.assertEqual(StringCalculator.add(""), 0)
-
-
-class SecondTest(unittest.TestCase):
 
     def test_add_n(self):
         # To simulate unknown amount of numbers, we generate a random whole number
@@ -35,10 +32,9 @@ class SecondTest(unittest.TestCase):
         self.assertEqual(StringCalculator.add(
             argument_string), expected_result)
 
-class ThirdTest(unittest.TestCase):
-    
     def test_add_with_new_line_as_param(self):
         self.assertEqual(StringCalculator.add("1\n2,3"), 6)
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -4,7 +4,7 @@ class StringCalculator():
             return 0
         else:
             # splitting manually
-            # Keep a buffer to store all characters before delimiters 
+            # Keep a buffer to store all characters before delimiters
             # have a list to collect all numbers (after splitting using dilimiters)
             buffer = ''
             numbersArray = list()
@@ -14,7 +14,7 @@ class StringCalculator():
                     buffer = ''
                 else:
                     buffer += char
-            
+
             # flush all remaining in buffer to the array
             if buffer is not '':
                 numbersArray.append(int(buffer))
