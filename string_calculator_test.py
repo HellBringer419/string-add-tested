@@ -34,6 +34,7 @@ class TestAddMethod(unittest.TestCase):
 
     def test_add_with_new_line_as_param(self):
         self.assertEqual(StringCalculator.add("1\n2,3"), 6)
+        self.assertEqual(StringCalculator.add("1\n2\n3\n4"), 10)
 
 
 if __name__ == '__main__':
