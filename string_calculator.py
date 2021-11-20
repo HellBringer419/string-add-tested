@@ -3,13 +3,18 @@ class StringCalculator():
         if numbers is '':
             return 0
         else:
+            delimiters = {',', '\n'}  # Set
+            if numbers.startswith('//'):
+                delimiters.add(numbers[2])
+                numbers = numbers.strip(f'//{numbers[2]}\n')
+
             # splitting manually
             # Keep a buffer to store all characters before delimiters
             # have a list to collect all numbers (after splitting using dilimiters)
             buffer = ''
             numbersArray = list()
             for char in numbers:
-                if char is ',' or char is '\n':
+                if char in delimiters:
                     numbersArray.append(int(buffer))
                     buffer = ''
                 else:
