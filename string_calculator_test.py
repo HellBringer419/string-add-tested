@@ -41,6 +41,9 @@ class TestAddMethod(unittest.TestCase):
         self.assertEqual(StringCalculator.add("//&\n1&2&3"), 6)
         self.assertEqual(StringCalculator.add("//$\n1$2$3$4"), 10)
 
+    def test_add_negative_numbers(self):
+        self.assertRaises(Exception, StringCalculator.add, "1,-2,3")
+
 
 if __name__ == '__main__':
     unittest.main()
