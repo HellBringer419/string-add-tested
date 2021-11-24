@@ -1,5 +1,6 @@
 import unittest
 from random import randint
+from negative_number_error import NegativeNumberException
 from string_calculator import StringCalculator
 
 
@@ -42,7 +43,7 @@ class TestAddMethod(unittest.TestCase):
         self.assertEqual(StringCalculator.add("//$\n1$2$3$4"), 10)
 
     def test_add_negative_numbers(self):
-        self.assertRaises(Exception, StringCalculator.add, "1,-2,3")
+        self.assertRaises(NegativeNumberException, StringCalculator.add, "1,-2,3")
 
 
 if __name__ == '__main__':
