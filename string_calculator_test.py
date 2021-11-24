@@ -44,6 +44,7 @@ class TestAddMethod(unittest.TestCase):
 
     def test_add_negative_numbers(self):
         self.assertRaises(NegativeNumberException, StringCalculator.add, "1,-2,3")
+        self.assertRaises(NegativeNumberException, StringCalculator.add, "1,-2,-3")
 
 
 if __name__ == '__main__':
