@@ -5,7 +5,6 @@ from string_calculator import StringCalculator
 
 
 class TestAddMethod(unittest.TestCase):
-
     def test_add(self):
         self.assertEqual(StringCalculator.add("1,2"), 3)
 
@@ -22,7 +21,7 @@ class TestAddMethod(unittest.TestCase):
         random_number = 2
         argument_string = ""
         for i in range(0, random_number):
-            if(i == random_number-1):
+            if i == random_number - 1:
                 argument_string += str(i)
             else:
                 argument_string += str(i) + ","
@@ -30,13 +29,12 @@ class TestAddMethod(unittest.TestCase):
         # sum of (n-1) natural numbers: n * (n-1) / 2
         expected_result = int(random_number * (random_number - 1) / 2)
 
-        self.assertEqual(StringCalculator.add(
-            argument_string), expected_result)
+        self.assertEqual(StringCalculator.add(argument_string), expected_result)
 
     def test_add_with_new_line_as_param(self):
         self.assertEqual(StringCalculator.add("1\n2,3"), 6)
         self.assertEqual(StringCalculator.add("1\n2\n3\n4"), 10)
-    
+
     def test_add_with_any_delimiter(self):
         self.assertEqual(StringCalculator.add("//;\n1;2"), 3)
         self.assertEqual(StringCalculator.add("//&\n1&2&3"), 6)
@@ -47,5 +45,5 @@ class TestAddMethod(unittest.TestCase):
         self.assertRaises(NegativeNumberException, StringCalculator.add, "1,-2,-3")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     unittest.main()
