@@ -1,3 +1,6 @@
+from negative_number_error import NegativeNumberException
+
+
 class StringCalculator():
     def add(numbers: str) -> int:
         if numbers is '':
@@ -19,10 +22,19 @@ class StringCalculator():
                     buffer = ''
                 else:
                     buffer += char
-
+            
             # flush all remaining in buffer to the array
             if buffer is not '':
                 numbersArray.append(int(buffer))
+            
+            negativeNumbers = list()
+            for number in numbersArray:
+                if number < 0:
+                    negativeNumbers.append(number)
+            
+            if len(negativeNumbers) > 0:
+                raise NegativeNumberException(negativeNumbers)
+            
             sum = 0
             for number in numbersArray:
                 sum += number
